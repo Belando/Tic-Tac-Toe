@@ -1,0 +1,154 @@
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+@font-face {
+    font-family: "Mystery Quest";
+    src: url("mystery-quest.woff2");
+}
+
+p, label {
+    font-family: "Mystery Quest", bold;
+    font-size: 180%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.515);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+#boton {
+    font-family: "Mystery Quest", bold;
+    font-size: 220%;
+    background:rgba(0, 0, 0, 0.515);
+}
+
+#boton2 {
+    font-family: "Mystery Quest", bold;
+    font-size: 100%;
+    background:rgba(157, 151, 151, 0.464) ;
+    color: white;
+}
+
+body {
+    background-image: url(../images/inicio.jpg);
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+.inicio {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 500px;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.jugadores {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 800px;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-evenly;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+.contenedor-juego{
+    height:100vh;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    text-align: center;
+
+}
+
+.juego-titulo, .juego-info{
+    text-align: center;
+}
+
+.juego-cuadricula{
+   
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:0;
+}
+
+.cuadro{
+    width:3rem;
+    height: 3rem;
+    border: 1px solid rgb(168, 168, 168);
+    text-align: center;
+    color:rgb(7, 255, 69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: background-color ease-in 0.2s;
+}
+
+.cuadro:hover{
+   
+    background-color:#cccc;
+    
+}
+
+.juego-boton{
+    display:inline-flex;
+    padding: 1rem 1rem;
+    background:red ;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: bold;
+    transition:color ease-out 0.3s;
+   
+}
+
+.juego-boton:hover{
+  
+    background:white ;
+    color: red;
+    border: 1px solid red;
+   
+}
