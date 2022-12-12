@@ -1,3 +1,5 @@
+/* MEDIA Y FONTS */
+
 [class*="col-"] {
     width: 100%;
   }
@@ -23,11 +25,13 @@
     src: url("mystery-quest.woff2");
 }
 
+/* INICIAL Y JUGADORES */
+
 p, label {
     font-family: "Mystery Quest", bold;
-    font-size: 180%;
+    font-size: 200%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.515);
+    background-color: rgba(0, 0, 0, 0.724);
     align-self: center;
     display: flex;
     justify-content: center;
@@ -36,14 +40,23 @@ p, label {
 #boton {
     font-family: "Mystery Quest", bold;
     font-size: 220%;
-    background:rgba(0, 0, 0, 0.515);
+    background:rgba(0, 0, 0, 0.724);
+    color: white;
+    transition: background-color ease-in 0.4s;
 }
 
 #boton2 {
     font-family: "Mystery Quest", bold;
-    font-size: 100%;
+    font-size: 50%;
     background:rgba(157, 151, 151, 0.464) ;
     color: white;
+    transition: background-color ease-in 0.4s;
+}
+
+#boton:hover{
+    background:white ;
+    color: rgb(14, 14, 14);
+    border: 1px solid rgb(250, 246, 246);
 }
 
 body {
@@ -54,7 +67,6 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
-
 
 .inicio {
     display: flex;
@@ -75,8 +87,9 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     justify-content: space-evenly;
-
 }
+
+/* VISTA TABLERO */
 
 *{
     margin: 0;
@@ -84,42 +97,33 @@ body {
     box-sizing: border-box;
 }
 
-
-
-
-
-
-
-
-.contenedor-juego{
+.tablero{
     height:100vh;
-    max-width: 1250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:2rem;
+    gap:1rem;
     text-align: center;
-
 }
 
 .juego-titulo, .juego-info{
     text-align: center;
 }
 
-.juego-cuadricula{
-   
+.cuadricula{
     display: grid;
     grid-template-columns: auto auto auto;
     gap:0;
 }
 
 .cuadro{
-    width:3rem;
-    height: 3rem;
+    width:6rem;
+    height: 6rem;
     border: 1px solid rgb(168, 168, 168);
     text-align: center;
-    color:rgb(7, 255, 69);
+    color:rgb(227, 233, 229);
+    font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,28 +131,21 @@ body {
     transition: background-color ease-in 0.2s;
 }
 
-.cuadro:hover{
-   
-    background-color:#cccc;
-    
-}
-
-.juego-boton{
-    display:inline-flex;
+.boton3{
     padding: 1rem 1rem;
-    background:red ;
-    color: white;
     cursor: pointer;
     justify-content: center;
     font-weight: bold;
     transition:color ease-out 0.3s;
-   
+    font-family: "Mystery Quest", bold;
+    font-size: 150%;
+    background:rgba(0, 0, 0, 0.724);
+    color: white;
+    transition: background-color ease-in 0.4s;
 }
 
-.juego-boton:hover{
-  
+.boton3:hover{
     background:white ;
-    color: red;
-    border: 1px solid red;
-   
+    color: rgb(14, 14, 14);
+    border: 1px solid rgb(250, 246, 246); 
 }
