@@ -4,26 +4,46 @@ const info = document.getElementById("info");
 const juegoBoton = document.getElementById("boton3")
 var gana1 = document.querySelector("#x")
 var gana2 = document.querySelector("#o")
+const jugador1 = sessionStorage.getItem("jugador1")
+const jugador2 = sessionStorage.getItem("jugador2")
 
-const getValueInput = () => {
-  let inputValue = document.getElementById("domTextElement").value;
+/*Referencia a jugadores*/
+function ocultarJug1(){
+  document.getElementById("Jugador1").style.display = 'none';
+  document.getElementById("boton1").style.display = 'none';
+}
+
+const getJ1 = () => {
+  let inputValue = document.getElementById("Jugador1").value;
   document.getElementById("valueInput").innerHTML = inputValue;
   sessionStorage.setItem("jugador1",inputValue)
+  onclick=ocultarJug1();
 }
 
-const getValueInput2 = () => {
-  let inputValue = document.getElementById("domTextElement2").value;
+function ocultarJug2(){
+  document.getElementById("Jugador2").style.display = 'none';
+  document.getElementById("boton2").style.display = 'none';
+}
+  
+const getJ2 = () => {
+  let inputValue = document.getElementById("Jugador2").value;
   document.getElementById("valueInput2").innerHTML = inputValue;
-  sessionStorage.setItem("jugador2",inputValue)
+  sessionStorage.setItem("jugador2",inputValue);
+  onclick=ocultarJug2();
 }
 
-/*Funcion de botón de volver a jugar*/
-var i = 1;
+function ocultarJug2(){
+  document.getElementById("Jugador2").style.display = 'none';
+  document.getElementById("boton2").style.display = 'none';
+}
+
+/*Desactivación - Activación del botón jugar*/
 const jugarActivado = "pointer-events:initial;opacity:initial;",
   jugarDesactivado = "pointer-events:none;opacity:80%;";
 let state = false;
 
 /*Marcador*/
+var i = 1;
 var contX = 1;
 var contO = 1;
 
@@ -37,13 +57,12 @@ var victoria = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 function quiengana() {
   for (var i = 0; i < victoria.length; i++) {
     if (cuadroBoton[victoria[i][0]].innerHTML === "X" && cuadroBoton[victoria[i][1]].innerHTML === "X" && cuadroBoton[victoria[i][2]].innerHTML === "X") {
-      info.innerHTML = sessionStorage.getItem("jugador1");
-      console.log (sessionStorage.getItem("jugador1"));
+      info.innerHTML = sessionStorage.getItem("jugador1") + " Gana cositas";
       state = true;
       gana1.innerHTML = contX++;
       bloquearCasillas();
     } else if (cuadroBoton[victoria[i][0]].innerHTML === "O" && cuadroBoton[victoria[i][1]].innerHTML === "O" && cuadroBoton[victoria[i][2]].innerHTML === "O") {
-      info.innerHTML = "Jugador 2 Gana cositas";
+      info.innerHTML = sessionStorage.getItem("jugador2") + " Gana cositas";
       state = true;
       gana2.innerHTML = contO++;
       bloquearCasillas();
@@ -55,7 +74,7 @@ function quiengana() {
 function quienEmpieza() {
   juegoBoton.style.cssText = jugarDesactivado;
   let empezar;
-  (i % 2 == 0) ? empezar = verFueraDeLaFuncion : empezar = "Jugador 2";
+  (i % 2 == 0) ? empezar = sessionStorage.getItem("jugador1") : empezar = sessionStorage.getItem("jugador2");
   info.innerHTML = `Quien gane se lleva cositas: empieza ${empezar}.`;
 }
 
