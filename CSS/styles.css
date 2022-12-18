@@ -91,12 +91,6 @@ body {
 
 /* VISTA TABLERO */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .tablero{
     height:100vh;
     display: flex;
@@ -152,14 +146,14 @@ body {
 }
 
 .marcador{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
     color: white;
     font-family: "04b_30";
     border: 1px solid rgb(250, 246, 246); 
-    font-size: 150%;
+    font-size: 120%;
     background:rgba(0, 0, 0, 0.724);
     padding-left: 20px;
     padding-right: 20px;

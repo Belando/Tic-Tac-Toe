@@ -1,14 +1,12 @@
-/*Referencias de la API*/
+/*Referencias*/
 const cuadroBoton = document.querySelectorAll(".cuadro");
 const info = document.getElementById("info");
 const juegoBoton = document.getElementById("boton3")
 var gana1 = document.querySelector("#x")
 var gana2 = document.querySelector("#o")
-const jugador1 = sessionStorage.getItem("jugador1")
-const jugador2 = sessionStorage.getItem("jugador2")
 
 /*Referencia a jugadores*/
-function ocultarJug1(){
+function ocultarJug1() {
   document.getElementById("Jugador1").style.display = 'none';
   document.getElementById("boton1").style.display = 'none';
 }
@@ -16,25 +14,20 @@ function ocultarJug1(){
 const getJ1 = () => {
   let inputValue = document.getElementById("Jugador1").value;
   document.getElementById("valueInput").innerHTML = inputValue;
-  sessionStorage.setItem("jugador1",inputValue)
-  onclick=ocultarJug1();
+  sessionStorage.setItem("jugador1", inputValue)
+  onclick = ocultarJug1();
 }
 
-function ocultarJug2(){
+function ocultarJug2() {
   document.getElementById("Jugador2").style.display = 'none';
   document.getElementById("boton2").style.display = 'none';
 }
-  
+
 const getJ2 = () => {
   let inputValue = document.getElementById("Jugador2").value;
   document.getElementById("valueInput2").innerHTML = inputValue;
-  sessionStorage.setItem("jugador2",inputValue);
-  onclick=ocultarJug2();
-}
-
-function ocultarJug2(){
-  document.getElementById("Jugador2").style.display = 'none';
-  document.getElementById("boton2").style.display = 'none';
+  sessionStorage.setItem("jugador2", inputValue);
+  onclick = ocultarJug2();
 }
 
 /*Desactivación - Activación del botón jugar*/
@@ -67,15 +60,19 @@ function quiengana() {
       gana2.innerHTML = contO++;
       bloquearCasillas();
     }
+  } if (cuadroBoton[0].innerHTML != "" && cuadroBoton[1].innerHTML != "" && cuadroBoton[2].innerHTML != "" && cuadroBoton[3].innerHTML !== "" && cuadroBoton[4].innerHTML != "" && cuadroBoton[5].innerHTML != "" && cuadroBoton[6].innerHTML != "" && cuadroBoton[7].innerHTML != "" && cuadroBoton[8].innerHTML != "" && state == false) {
+    info.innerHTML = sessionStorage.getItem("jugador1") + "y" + sessionStorage.getItem("jugador2") + "han quedado empate";
+    bloquearCasillas(false);
   }
 }
+
 
 /*Ver quien empieza la partida(se turnan)*/
 function quienEmpieza() {
   juegoBoton.style.cssText = jugarDesactivado;
-  let empezar;
-  (i % 2 == 0) ? empezar = sessionStorage.getItem("jugador1") : empezar = sessionStorage.getItem("jugador2");
-  info.innerHTML = `Quien gane se lleva cositas: empieza ${empezar}.`;
+  let turnos;
+  (i % 2 == 0) ? turnos = sessionStorage.getItem("jugador1") : turnos = sessionStorage.getItem("jugador2");
+  info.innerHTML = `Quien gane se lleva cositas: empieza ${turnos}`;
 }
 
 /*Bloqueo de casillas al ganar*/
