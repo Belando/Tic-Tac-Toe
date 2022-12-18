@@ -61,7 +61,7 @@ function quiengana() {
       bloquearCasillas();
     }
   } if (cuadroBoton[0].innerHTML != "" && cuadroBoton[1].innerHTML != "" && cuadroBoton[2].innerHTML != "" && cuadroBoton[3].innerHTML !== "" && cuadroBoton[4].innerHTML != "" && cuadroBoton[5].innerHTML != "" && cuadroBoton[6].innerHTML != "" && cuadroBoton[7].innerHTML != "" && cuadroBoton[8].innerHTML != "" && state == false) {
-    info.innerHTML = sessionStorage.getItem("jugador1") + "y" + sessionStorage.getItem("jugador2") + "han quedado empate";
+    info.innerHTML = sessionStorage.getItem("jugador1") + " y " + sessionStorage.getItem("jugador2") + " han quedado empate";
     bloquearCasillas(false);
   }
 }
