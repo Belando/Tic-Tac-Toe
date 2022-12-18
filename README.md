@@ -3,7 +3,7 @@ Juego de 3 en raya
 
 Proyecto de juego de 3 en raya usando JavaScript, HTML5 y CSS3. 
 
-Vistas:
+VISTAS:
 
 Inicio
 
@@ -11,7 +11,7 @@ Pantalla de Jugadores
 
 Pantalla de Tablero
 
-Implementa:
+IMPLEMENTA:
 
 Modo: Jugador VS Jugador
 
@@ -23,7 +23,7 @@ Indicador de turno y de ganador
 
 Marcador del global
 
-BUGS / Falta:
+BUGS / FALTA:
 
 Poner el nombre de los jugadores en el marcador.
 
