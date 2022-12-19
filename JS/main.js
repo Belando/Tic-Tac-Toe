@@ -62,10 +62,9 @@ function quiengana() {
     }
   } if (cuadroBoton[0].innerHTML != "" && cuadroBoton[1].innerHTML != "" && cuadroBoton[2].innerHTML != "" && cuadroBoton[3].innerHTML !== "" && cuadroBoton[4].innerHTML != "" && cuadroBoton[5].innerHTML != "" && cuadroBoton[6].innerHTML != "" && cuadroBoton[7].innerHTML != "" && cuadroBoton[8].innerHTML != "" && state == false) {
     info.innerHTML = sessionStorage.getItem("jugador1") + " y " + sessionStorage.getItem("jugador2") + " han quedado empate";
-    bloquearCasillas(false);
+    bloquearCasillas();
   }
 }
-
 
 /*Ver quien empieza la partida(se turnan)*/
 function quienEmpieza() {
@@ -76,8 +75,7 @@ function quienEmpieza() {
 }
 
 /*Bloqueo de casillas al ganar*/
-function bloquearCasillas(y) {
-  (y == false) ? i = Math.floor(Math.random() * (3 - 1)) + 1 : 0;
+function bloquearCasillas() {
   for (var pos = 0; pos < cuadroBoton.length; pos++) {
     cuadroBoton[pos].style.setProperty("pointer-events", "none");
   }
