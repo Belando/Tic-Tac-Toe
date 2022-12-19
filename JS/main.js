@@ -84,7 +84,7 @@ function bloquearCasillas(y) {
   juegoBoton.style.cssText = jugarActivado;
 }
 
-/* Turnos de juego */
+/* Marcado del juego */
 cuadroBoton.forEach(boton => {
   boton.onclick = function () {
     info.innerHTML = "";
