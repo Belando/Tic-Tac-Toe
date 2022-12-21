@@ -6,28 +6,20 @@ var gana1 = document.querySelector("#x")
 var gana2 = document.querySelector("#o")
 
 /*Referencia a jugadores*/
-function ocultarJug1() {
-  document.getElementById("Jugador1").style.display = 'none';
-  document.getElementById("boton1").style.display = 'none';
-}
-
 const getJ1 = () => {
   let inputValue = document.getElementById("Jugador1").value;
   document.getElementById("valueInput").innerHTML = inputValue;
   sessionStorage.setItem("jugador1", inputValue)
-  onclick = ocultarJug1();
-}
-
-function ocultarJug2() {
-  document.getElementById("Jugador2").style.display = 'none';
-  document.getElementById("boton2").style.display = 'none';
+  onclick = document.getElementById("Jugador1").style.display = 'none';
+  document.getElementById("boton1").style.display = 'none';
 }
 
 const getJ2 = () => {
   let inputValue = document.getElementById("Jugador2").value;
   document.getElementById("valueInput2").innerHTML = inputValue;
   sessionStorage.setItem("jugador2", inputValue);
-  onclick = ocultarJug2();
+  onclick = document.getElementById("Jugador2").style.display = 'none';
+  document.getElementById("boton2").style.display = 'none'
 }
 
 /*Desactivación - Activación del botón jugar*/
@@ -43,8 +35,7 @@ var contO = 1;
 /*Posibles posiciones de victoria*/
 var victoria = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 [0, 3, 6], [1, 4, 7], [2, 5, 8],
-[0, 4, 8], [2, 4, 6]
-];
+[0, 4, 8], [2, 4, 6]];
 
 /*Condición de victoria de cada jugador*/
 function quiengana() {
@@ -66,7 +57,6 @@ function quiengana() {
   }
 }
 
-
 /*Ver quien empieza la partida(se turnan)*/
 function quienEmpieza() {
   juegoBoton.style.cssText = jugarDesactivado;
@@ -84,7 +74,7 @@ function bloquearCasillas(y) {
   juegoBoton.style.cssText = jugarActivado;
 }
 
-/* Turnos de juego */
+/*Marcado del juego*/
 cuadroBoton.forEach(boton => {
   boton.onclick = function () {
     info.innerHTML = "";
