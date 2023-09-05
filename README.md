@@ -1,4 +1,4 @@
-# Tic-Tac-Toe-RETO
+# Tic-Tac-Toe
 Juego de 3 en raya
 
 Proyecto de juego de 3 en raya usando JavaScript, HTML5 y CSS3. 
